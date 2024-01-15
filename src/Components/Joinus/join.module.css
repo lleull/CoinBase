@@ -47,9 +47,7 @@
 .headpara {
   font-size: 40px;
   font-weight: 700;
-
-  color: transparent;
-  background-clip: text;
+  text-transform: uppercase;
   background: linear-gradient(120deg, rgb(0, 12, 173), rgb(196, 22, 51));
   color: transparent;
   background-size: 300% 300%;
@@ -58,26 +56,22 @@
   animation: textcol 10s ease-in-out infinite;
 }
 @keyframes textcol {
-    0% {
-      background-position: 300% 300%;
-    }
-    30% {
-      background-position: 200% 200%;
-  
-    }
-    50% {
-      background-position: 200% 100%;
-  
-    }
-    80% {
-      background-position: 50% 100%;
-  
-    }
-    100% {
-      background-position: 300% 300%;
-  
-    }
+  0% {
+    background-position: 300% 300%;
   }
+  30% {
+    background-position: 200% 200%;
+  }
+  50% {
+    background-position: 200% 100%;
+  }
+  80% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 300% 300%;
+  }
+}
 .wrap {
   display: flex;
   gap: 30px;

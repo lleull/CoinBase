@@ -1,0 +1,91 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+margin-top: 200px;
+  height: 150vh;
+  margin-bottom: 100px;
+}
+table {
+  width: 100%;
+}
+.rowtext{
+  width: 10%;
+
+  
+
+}
+
+.head {
+  color: white;
+  font-weight: 600;
+  font-size: 26px;
+}
+.num{
+  color: black;
+
+}
+thead {
+  background: linear-gradient(120deg, blue, rgb(196, 22, 51));
+}
+th {
+  font-size: 17px;
+  color: white;
+}
+.row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.headrow {
+  border-radius: 20px;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+td {
+  color: white;
+  @media (width< 780px) {
+    font-size: 12px;
+    
+  }
+}
+.row {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 2px solid white;
+  justify-content: space-between;
+}
+.page {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+.pagenums {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  border: 2px solid white;
+  background: linear-gradient(120deg, blue, rgb(196, 22, 51));;
+}
+.pagenum {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  background: white;
+}
+

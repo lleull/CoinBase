@@ -1,0 +1,119 @@
+.section {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 100px;
+  @media (width < 780px) {
+    width: 80%;
+    height: 50vh;
+    align-items: center;
+    display: flex;
+  }
+}
+.img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  animation: bounce ease-in-out 3s infinite;
+  @media (width < 780px) {
+    width: 70px;
+    height: 70px;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.head {
+  font-size: 60px;
+  margin: 0;
+  @media (width < 780px) {
+    font-size: 30px;
+  }
+}
+.headpara {
+  font-size: 60px;
+  font-weight: 700;
+
+  color: transparent;
+  background: linear-gradient(150deg, blue, rgb(185, 0, 0));
+  background-clip: text;
+  background: linear-gradient(120deg, rgb(0, 12, 173), rgb(196, 22, 51));
+  color: transparent;
+  background-size: 300% 300%;
+  margin-bottom: 50px;
+  background-clip: text;
+  animation: textcol 10s ease-in-out infinite;
+}
+@keyframes textcol {
+    0% {
+      background-position: 300% 300%;
+    }
+    30% {
+      background-position: 200% 200%;
+  
+    }
+    50% {
+      background-position: 200% 100%;
+  
+    }
+    80% {
+      background-position: 50% 100%;
+  
+    }
+    100% {
+      background-position: 300% 300%;
+  
+    }
+  }
+.wrap {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.textwrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.para {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  @media (width < 780px) {
+    font-size: 12px;
+  }
+}
+.btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  width: 30%;
+  padding: 20px;
+  border: none;
+  color: white;
+  margin-top: 40px;
+  font-size: 30px;
+  border-radius: 30px;
+  background: linear-gradient(120deg, blue, red);
+  @media (width < 780px) {
+    width: 80%;
+  }
+}

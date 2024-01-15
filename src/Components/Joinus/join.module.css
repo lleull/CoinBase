@@ -42,6 +42,7 @@
   margin: 0;
   @media (width < 780px) {
     font-size: 30px;
+    text-align: center;
   }
 }
 .headpara {

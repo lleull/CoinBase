@@ -5,6 +5,11 @@
     height: 80vh;
    
     justify-content: space-between;
+
+    @media (width < 780px) {
+        width: 100%;
+        
+    }
 }
 .image{
     width: 30%;

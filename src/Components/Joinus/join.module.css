@@ -18,8 +18,8 @@
   object-fit: cover;
   animation: bounce ease-in-out 3s infinite;
   @media (width < 780px) {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
   }
 }
 @keyframes bounce {
@@ -45,11 +45,10 @@
   }
 }
 .headpara {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 700;
 
   color: transparent;
-  background: linear-gradient(150deg, blue, rgb(185, 0, 0));
   background-clip: text;
   background: linear-gradient(120deg, rgb(0, 12, 173), rgb(196, 22, 51));
   color: transparent;

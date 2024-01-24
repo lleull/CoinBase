@@ -128,7 +128,7 @@
 .toggle {
   width: 100%;
   position: fixed;
-  background: linear-gradient(210deg, blue, gray);
+  background: linear-gradient(210deg, rgb(6, 6, 8), rgb(77, 47, 47));
   left: 0;
   top: 0;
   display: flex;

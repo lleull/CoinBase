@@ -10,6 +10,11 @@
     height: 50vh;
     align-items: center;
     display: flex;
+    margin-top: 200px;
+  }
+  @media  (width < 400px) {
+    margin-top: 250px;
+    
   }
 }
 .img {

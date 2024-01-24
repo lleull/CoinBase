@@ -1,32 +1,66 @@
 import React from "react";
 import styles from "./Market.module.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Markeydata from "./Marketapi";
-import { useState } from "react";
 const Market = () => {
+  const [coindata, setcoindata] = useState([]);
   const [fnum, setfnum] = useState(0);
   const [snum, setsnum] = useState(10);
-
-  const Limitcoin = Markeydata.slice(fnum, snum);
+  
+  const options = {
+    method: "GET",
+    mode: "nocors",
+    url: "https://coinranking1.p.rapidapi.com/coins",
+    params: {
+      referenceCurrencyUuid: "yhjMzLPhuIDl",
+      timePeriod: "24h",
+      "tiers[0]": "1",
+      orderBy: "marketCap",
+      orderDirection: "desc",
+      limit: "50",
+      offset: "0",
+    },
+    headers: {
+      "X-RapidAPI-Key": "36e79fec5bmsh0641910c952cbeep1afb1ejsn132bcc2ba3cc",
+      "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+    },
+  };
+  const fetchdata = async () => {
+    try {
+      const response = await axios.request(options);
+      const onlydata = response.data;
+      setcoindata(onlydata.data.coins);
+      console.log(coindata);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    fetchdata();
+  }, []);
   const first = () => {
-    setfnum(0)
-    setsnum(10)
-  }
+    setfnum(0);
+    setsnum(10);
+  };
   const second = () => {
-    setfnum(10)
-    setsnum(20)
-  }
+    setfnum(10);
+    setsnum(20);
+  };
   const thirs = () => {
-    setfnum(20)
-    setsnum(30)
-  }
+    setfnum(20);
+    setsnum(30);
+  };
   const fourth = () => {
-    setfnum(30)
-    setsnum(40)
-  }
+    setfnum(30);
+    setsnum(40);
+  };
   const fifth = () => {
-    setfnum(40)
-    setsnum(50)
-  }
+    setfnum(40);
+    setsnum(50);
+  };
+  const Limitcoin = coindata.slice(fnum, snum);
+  
 
   return (
     <div className={styles.section}>
@@ -36,37 +70,55 @@ const Market = () => {
           <thead>
             <tr className={styles.headrow}>
               <th>Coin</th>
-              <th>Price</th>
-              <th>24Change</th>
+              <th className={styles.width}>Price</th>
+              <th  >24Change</th>
               <th>Market Cap</th>
             </tr>
           </thead>
-        </table>
         {Limitcoin.map((Limitcoins) => (
-          <tr className={styles.row}>
-            <td className={styles.rowtext}>{Limitcoins.name}</td>
+          <tr key={Limitcoins.uuid} className={styles.row}>
+            <t className={styles.header}>
+             <img src={Limitcoins.iconUrl} alt="s" className={styles.icon}/>
+              <span className={styles.coinname}>{Limitcoins.symbol}</span> 
+            </t>
 
-            <td>{Limitcoins.price_usd}</td>
+            <td className={styles.price}>{(Limitcoins.price * 10000).toFixed(0) / 10000}</td>
 
-            <td>{Limitcoins.percent_change_24h}</td>
-            <td>{Limitcoins.market_cap_usd}</td>
+            <td className={Limitcoins.change.includes("-")? styles.red :styles.green}>{Limitcoins.change}</td>
+            <td>{Limitcoins.marketCap}</td>
           </tr>
         ))}
 
+          </table>
         <div className={styles.page}>
-          <div onClick={first} className={ snum === 10 ? styles.pagenums :styles.pagenum}>
+          <div
+            onClick={first}
+            className={snum === 10 ? styles.pagenums : styles.pagenum}
+            >
             <span className={styles.num}>1</span>
           </div>
-          <div onClick={second} className={snum === 20  ? styles.pagenums :styles.pagenum}>
+          <div
+            onClick={second}
+            className={snum === 20 ? styles.pagenums : styles.pagenum}
+            >
             <span className={styles.num}>2</span>
           </div>
-          <div onClick={thirs} className={snum === 30  ? styles.pagenums :styles.pagenum}>
+          <div
+            onClick={thirs}
+            className={snum === 30 ? styles.pagenums : styles.pagenum}
+          >
             <span className={styles.num}>3</span>
           </div>
-          <div onClick={fourth} className={snum === 40   ?  styles.pagenums :styles.pagenum}>
+          <div
+            onClick={fourth}
+            className={snum === 40 ? styles.pagenums : styles.pagenum}
+          >
             <span className={styles.num}>4</span>
           </div>
-          <div onClick={fifth} className={snum  === 50 ? styles.pagenums :styles.pagenum}>
+          <div
+            onClick={fifth}
+            className={snum === 50 ? styles.pagenums : styles.pagenum}
+          >
             <span className={styles.num}>5</span>
           </div>
         </div>

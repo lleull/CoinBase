@@ -16,6 +16,11 @@
  justify-content: center;
  flex-direction: column;
 
+ @media  ( width < 780px) {
+  width: 90%;
+  
+ }
+
 
 }
 img{

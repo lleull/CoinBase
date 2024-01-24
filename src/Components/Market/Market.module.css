@@ -2,18 +2,22 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-margin-top: 200px;
+  margin-top: 200px;
   height: 150vh;
   margin-bottom: 100px;
 }
 table {
   width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
-.rowtext{
-  width: 10%;
 
-  
-
+.red {
+  color: red;
+  font-weight: 900;
+}
+.green {
+  color: rgb(3, 255, 158);
 }
 
 .head {
@@ -21,9 +25,8 @@ table {
   font-weight: 600;
   font-size: 26px;
 }
-.num{
+.num {
   color: black;
-
 }
 thead {
   background: linear-gradient(120deg, blue, rgb(196, 22, 51));
@@ -44,11 +47,59 @@ th {
   display: flex;
   justify-content: space-between;
 }
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.price {
+  width: 30%;
+  margin-left: 100px;
+  @media (width < 780px) {
+    margin-left: 20px;
+  }
+}
+.coinname {
+  @media (width< 780px) {
+    display: none;
+  }
+}
+th {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid white;
+  justify-content: center;
+  @media (width < 780px) {
+    font-size: 13px;
+  }
+}
+.icon {
+  width: 30px;
+  height: 30px;
+}
+td:first-child {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+th:first-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.width{
+  width: 30%;
+}
 td {
   color: white;
+  width: 20%;
+  align-items: center;
+  text-align: end;
+  display: flex;
+  justify-content:center;
+  font-weight: 600;
   @media (width< 780px) {
     font-size: 12px;
-    
   }
 }
 .row {
@@ -75,7 +126,7 @@ td {
   justify-content: center;
   margin-left: 5px;
   border: 2px solid white;
-  background: linear-gradient(120deg, blue, rgb(196, 22, 51));;
+  background: linear-gradient(120deg, blue, rgb(196, 22, 51));
 }
 .pagenum {
   border-radius: 50%;
@@ -88,4 +139,3 @@ td {
   margin-left: 5px;
   background: white;
 }
-

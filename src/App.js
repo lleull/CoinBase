@@ -25,13 +25,13 @@ const App = () => {
     <div style={ThemeConfiguration} className="app">
       <button style={ThemeConfiguration} onClick={() => setDark(!dark)}>Change Theme</button>
 
-      {/* <div className="section">
+      <div className="section">
         <Navbar />
         <Market />
         <Choose />
         <Joinus />
       </div>
-      <Lastpage /> */}
+      <Lastpage />
       <input type="number" onChange={(e) => setnumber(e.target.value)} />
       <h1 style={{ color: "red" }}>{doubler}</h1>
     </div>
